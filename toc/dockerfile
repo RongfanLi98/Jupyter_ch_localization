@@ -1,0 +1,10 @@
+FROM jupyter/datascience-notebook:be289da10d60
+
+RUN conda install -c conda-forge jupyter_contrib_nbextensions
+
+# RUN jupyter nbextension enable toc2/main
+# RUN sed -i 's/true/false/g' ./.jupyter/nbconfig/notebook.json
+# RUN cat ./.jupyter/nbconfig/notebook.json>notebook_store.json
+
+ENTRYPOINT []
+CMD ["tini", "-g", "--", "start-notebook.sh", "&&", "jupyter", "nbextension", "enable", "toc2/main"]

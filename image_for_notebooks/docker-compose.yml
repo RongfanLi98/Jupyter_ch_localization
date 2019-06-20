@@ -1,0 +1,14 @@
+version:  '3'
+services:
+  datascience-notebook:
+      # build: 
+      #   dockerfile: Dockerfile
+      #   context: .
+      image:  registry.datadynamic.io/library/jupyterlab-chinese:20190419
+      # volumes:
+      #   - ${LOCAL_WORKING_DIR}:/home/jovyan/jupyter_chinese:Z
+      ports:
+        - ${PORT}:8888
+      container_name:   jupyter_notebook
+      command: "start-notebook.sh \
+        --NotebookApp.password=${ACCESS_TOKEN}"

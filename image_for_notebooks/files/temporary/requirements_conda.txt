@@ -1,0 +1,12 @@
+IniFile
+cycler
+matplotlib
+numpy
+pandas
+plotly
+requests
+scipy
+seaborn
+statsmodels
+time
+xlrd
